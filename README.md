@@ -19,6 +19,24 @@ jest podłączenie do przekazu obrazu na żywo. W ten sposób można
 weryfikować pracę elementów podłączonych do zestawów startowych, 
 którymi są np. diody LED.
 
+Poniżej przykład środowiska, na którym odbywa się praca zdalna.
+Proszę zwrócić uwagę na diodę LED emitującą światło 
+w kolorze czerwonym.
+
+![Diody wyłączone](https://github.com/wdomski/SteRoL/blob/develop/images/boards_off.jpg "Płytki na stole wraz z wyłączonymi diodami")
+
+![Diody włączone](https://github.com/wdomski/SteRoL/blob/develop/images/boards_on.jpg "Płytki na stole wraz z włączonymi diodami")
+
+Do każdej płytki deweloperskiej podłączona jest płytka stykowa. 
+Na dwie płytki deweloperskie przypada jedna płytka stykowana, 
+na której znajdują się diody LED, symulatory oraz układy zewnętrzne.
+
+Płytka stykowa znajduje się zawsze po lewej stronie zestawu startowego. 
+Diody znajdujące się na górnej połowie płytki stykowej należą do zestawu, 
+bezpośrednio obok, na górze. Diody i inne układy na płytce stykowej, 
+które znajdują się w jej dolej części należą do dolnego zestawu deweloperskiego, 
+co zostało pokazane na powyższych zdjęciach.
+
 ## Przygotowanie do zajęć
 
 W celu realizacji wszystkich zajęć laboratoryjnych należy mieć 
@@ -73,7 +91,8 @@ W ramach kursu wykorzystywane są różne płytki ewaluacyjne. Można
 do nich zaliczyć:
 - Nucleo-L476RG,
 - Nucleo-L452RE,
-- STM32L476G-Disco.
+- STM32L476G-Disco,
+- STM32F429I-DISC1.
 
 W katalogu **boards** znajdują się poglądowe schematy, które przedstawiają 
 w jaki sposób udostępnione płytki ewaluacyjne zostały połączone. 
@@ -317,11 +336,25 @@ to wówczas przydatnym narzędziem może okazać się PuTTY.
 Konfiguracja za pomocą programu jest intuicyjna, natomiast poniżej została 
 pokazana grafika w jaki sposób można ustawić tunelowanie portów.
 
-![Konfiguracja PuTTY](https://github.com/wdomski/SteRoL/blob/develop/putty.png "Konfiguracja PuTTY")
+![Konfiguracja PuTTY](https://github.com/wdomski/SteRoL/blob/develop/images/putty.png "Konfiguracja PuTTY")
 
 # Rozwiązywanie problemów
 
-## Problem połączenia
+## Brak możliwości połączenia się z serwerem
+
+Po inicjalizacji sesji SSH nie pojawia się okno z zachętą odnośnie wpisania 
+loginu lub pojawia się komunikat o przekroczeniu czas (**Connection timeout**).
+
+Problem ten jest związany z czasowym nałożeniem blokady na 
+połączenie z komputera. Nastąpiło to z powodu kilku nieudanych 
+prób logowania (błędne hasło).
+
+Zalecane jest kopiowanie hasła, a nie jego przepisywanie. 
+Lepszym rozwiązaniem jest stworzenie pary kluczy SSH dzięki, 
+którym można zautomatyzować proces logowania bez potrzeby 
+wpisywania hasła.
+
+## Problem uruchomienia sesji debuggera
 
 Jeśli podczas rozpoczęcia pojawi się problem związany z uruchomieniem sesji debugowania 
 wystąpi problem z połączeniem to należy sprawdzić:
@@ -330,7 +363,7 @@ wystąpi problem z połączeniem to należy sprawdzić:
 2. Czy usługa OpenOCD jest aktywna? Reset usługi za pomocą serwera 
 stanu może rozwiązać problem (pozycja **Restart OpenOCD**).
 
-## Problem usunięcia pamięci
+## Problem usunięcia pamięci podczas debugowania
 
 Podczas uruchamiania sesji debugowania pojawia się błąd odnoszący 
 się do próby usunięcia pamięci, który kończy się niepowodzeniem.
