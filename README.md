@@ -36,7 +36,8 @@ przez serwer.
 Każdy z serwerów oferuj następujące usługi:
 - **serwer OpenOCD** do pracy zdalnej z zestawami startowymi, 
 port usługi można uzyskać na podstawie odczytów z serwera 
-stanu,
+stanu. Numer portu można również wyliczyć przez zsumowanie 
+liczby 3000 oraz numeru identyfikacyjnego **ID** płytki deweloperskiej,
 - **serwer stanu**, usługa webowa dostępna lokalnie na serwerze 
 na porcie 8082. Dzięki niej możliwe jest sprawdzenie 
 stanu serwera, podpiętych płytek deweloperskich i ich kondycji, 
@@ -60,13 +61,19 @@ stronie kursu
 
 Wszystkie zadania można znaleźć w katalogu **exercises**.
 
+## Przesyłanie zadań
+
+Wykonane zadania należy przesłać na platformę eportal. Jednak uprzednio 
+należy usunąć katalog *Debug* oraz zarchiwizować katalog projektu. 
+Wspierane formaty to *.zip* oraz *.7z*.
+
 # Materiały
 
 W ramach kursu wykorzystywane są różne płytki ewaluacyjne. Można 
 do nich zaliczyć:
-* Nucleo-L476RG,
-* Nucleo-L452RE,
-* STM32L476G-Disco.
+- Nucleo-L476RG,
+- Nucleo-L452RE,
+- STM32L476G-Disco.
 
 W katalogu **boards** znajdują się poglądowe schematy, które przedstawiają 
 w jaki sposób udostępnione płytki ewaluacyjne zostały połączone. 
@@ -165,6 +172,13 @@ nazwa urządzenia szeregowego,
 zestaw dostępnych złącz oraz modułów podłączonych do  
 zestawu startowego.
 
+Ponadto dostępne są operacje, które umożliwiają:
+- **Reset**, reset mikrokontrolera,
+- **Halt** zatrzymanie działania rdzenia mikrokontrolera,
+- **Resume** wznowienie działania rdzenia mikrokontrolera,
+- **Restart OpenOCD** ponowne uruchomienie usługi związanej z 
+debuggerem OpenOCD.
+
 ## ID
 
 Unikalny numer identyfikacyjny zestawu startowego.
@@ -214,13 +228,118 @@ następujących parametrach (115200, 8N1):
 - N brak bitu parzystości,
 - 1, jeden bit stopu.
 
+Aby wyjść z programu *minicom* należy nacisnąć 
+kombinację klawiszy **Ctrl+a**, a następnie wcisnąć przycisk **x**.
+
 ## Features
 
-TBD
+Do każdej z płytek przypisany jest indywidualny zestaw złącz. 
+Nie wszystkie płytki wyposażone są w ten sam zestaw złącz, przez 
+co nie wszystkie możliwe konfiguracje są dostępne.
+
+Przy wykorzystaniu schematu zestawu można określić jakie złącze 
+jest przypisane, do którego portu mikrokontrolera. 
+Przykładowo w liście złączy występuje wpis 
+LED1, który jest przypisany do protu PB14 występującego 
+w mikrokontrolerze.
 
 # Dostępne moduły zewnętrzne
 
 TBD
+
+# Serwery
+
+W ramach ćwiczeń laboratoryjnych jak i projektowych dostępne są 
+trzy serwery:
+
+- *aries*,
+- *taurus*,
+- *eridanus*.
+
+Każdy z serwerów jest dostępny za pomocą przypisanego portu, 
+na którym uruchomiona jest serwer usługi SSH.
+W poniższej tabeli spisano numery portów SSH, do których można się 
+połączyć.
+
+|Serwer          |Numer portu|Numer zapasowego portu|
+|-|-|-|
+|aries           | 2201      | 2301                 |
+|taurus          | 2202      | 2302                 |
+|eridanus        | 2203      | 2303                 |
+
+W przypadku, gdy usługa nie jest dostępna na podstawowym porcie 
+należy skorzystać z zapasowego portu.
+
+## Aries
+
+Serwer wspiera usługi: OpenOCD, serwer stanu oraz serwer strumieniowania 
+wideo.
+
+## Taurus
+
+Serwer wspiera usługi: OpenOCD oraz serwer strumieniowania wideo.
+
+## Eridanus
+
+Serwer wspiera usługi: OpenOCD, serwer stanu oraz serwer strumieniowania 
+wideo.
+
+# Sesja SSH
+
+W celu pracy zdalnej z zestawami ewaluacyjnymi należy połączyć 
+się za pomocą dowolnego klienta SSH, który umożliwia tunelowanie portów. 
+
+## Linux
+
+W przypadku systemu Linux należy posłużyć się komendą 
+
+```bash
+ssh LOGIN@DOMAIN -p 2201 -L 3001:localhost:3001 -L 8011:localhost:8081 -L 8012:localhost:8082
+```
+
+Powyższa komenda spowoduje, że zostanie otwarte połączenie z serwerem 
+aries (ze względu na użyty numer portu 2201) oraz zostaną przekierowane trzy 
+porty:
+- port usługi OpenOCD (3001), 
+- port usługi strumienia wideo dostępny na serwerze aries na porcie 8081. 
+Usługa ta będzie dostępna lokalnie pod adresem localhost:8011,
+- port usługi serwera stanu dostępny na serwerze aries na porcie 8082. 
+Usługa ta będzie dostępna lokalnie pod adresem localhost:8012,
+
+Proszę zwrócić uwagę, że numery portu dla serwera strumienia wideo 
+oraz dla serwera stanu są różne w przypadku serwera oraz maszyny lokalnej, 
+z której nawiązywane jest połączenie.
+
+## Windows
+
+Jeżeli do nawiązywania połączenia wykorzystywany jest system Windows, 
+to wówczas przydatnym narzędziem może okazać się PuTTY. 
+Konfiguracja za pomocą programu jest intuicyjna, natomiast poniżej została 
+pokazana grafika w jaki sposób można ustawić tunelowanie portów.
+
+![Konfiguracja PuTTY](https://github.com/wdomski/SteRoL/blob/develop/putty.png "Konfiguracja PuTTY")
+
+# Rozwiązywanie problemów
+
+## Problem połączenia
+
+Jeśli podczas rozpoczęcia pojawi się problem związany z uruchomieniem sesji debugowania 
+wystąpi problem z połączeniem to należy sprawdzić:
+
+1. Czy został poprawnie przekierowany port dla usługi OpenOCD?
+2. Czy usługa OpenOCD jest aktywna? Reset usługi za pomocą serwera 
+stanu może rozwiązać problem (pozycja **Restart OpenOCD**).
+
+## Problem usunięcia pamięci
+
+Podczas uruchamiania sesji debugowania pojawia się błąd odnoszący 
+się do próby usunięcia pamięci, który kończy się niepowodzeniem.
+W tym celu za pomocą serwera statusu należy zresetować 
+mikrokontroler (pozycja **Reset**).
+
+
+
+
 
 
 
