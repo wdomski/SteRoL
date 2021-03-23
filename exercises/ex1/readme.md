@@ -1,4 +1,4 @@
-# Zadanie 1
+# Zadanie 1 - ex1
 
 Przedstawione zadania dotyczą:
 - obsługi interfejsu szeregowego,
@@ -6,10 +6,17 @@ Przedstawione zadania dotyczą:
 - funkcje zwrotne,
 - przekierowania standardowego wyjścia.
 
+Podczas wykonywania ćwiczeń wykorzystaj instrukcje laboratoryjną:
+
+W. Domski, Sterowniki robotów, Laboratorium – Debugowanie, 
+Zaawansowane techniki debugowania, 2018
+
 ## Przekierowanie standardowego wyjścia
 
 Przekieruj standardowe wyjście na interfejs szeregowy 
-UART dostępny za pośrednictwem peryferium UART2.
+UART dostępny za pośrednictwem peryferium UART2. 
+Do wyświetlania komunikatu na interfejsie szeregowym 
+wykorzystaj funkcję **printf()**.
 
 Napisz program, który będzie wyświetlał napis 
 "Witaj", po którym pojawi się liczba. Liczba 
@@ -18,7 +25,9 @@ ta ma być inkrementowana dla każdej kolejnej linii.
 Nowy napis ma być wypisywany co 1 sekundę.
 
 Do komunikacji poprzez port szeregowy wykorzystaj program 
-**minicom** dostępny na serwerze.
+**minicom** dostępny na serwerze. Ścieżka do urządzenia szeregowego 
+jest przypisana indywidualnie do każdej z płytek. Można 
+ją odczytać bezpośrednio przez serwer statusu.
 
 Przykładowo:
 
@@ -27,6 +36,10 @@ Witaj 1
 Witaj 2
 Witaj 3
 ```
+
+Projekt nazwij jako *ex1_1*.
+Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
+jako archiwum zip lub 7zip oraz wyślij na eportal.
 
 ## Odczytywanie danych z interfejsu szeregowego
 
@@ -64,6 +77,11 @@ Witaj 9
 Witaj 10
 ```
 
+Tekst np. "<- b" wskazuje na moment wciśnięcia klawisza "b" oraz 
+zatwierdzenia jego wprowadzenia klawiszem "Enter". Tekst 
+ten ("<- b") nie powinien być wyświetlany na ekranie. Ma on jedynie 
+na celu pokazanie interakcji użytkownika z oprogramowanie *minicom*.
+
 Do realizacji zadania wykorzystaj przerwania, a w szczególności 
 wykorzystaj funkcje zwrotne:
 ```C
@@ -71,7 +89,13 @@ HAL_UART_RxCpltCallback();
 ```
 
 Pamiętaj o odpowiedniej deklaracji zmiennych, które będą wykorzystywane 
-w obsłudze przerwania.
+w obsłudze przerwania. Przestrzegaj zasady dotyczącej implementacji 
+przerwań, obsługę przerwania należy zakończyć tak szybko jak jest 
+to możliwe.
+
+Projekt nazwij jako *ex1_2*.
+Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
+jako archiwum zip lub 7zip oraz wyślij na eportal.
 
 ## Włączanie i wyłączanie diody
 
@@ -115,6 +139,15 @@ c   <- wybór sterowania diodą podłączoną do złącza TIMER4
 d   <- ignorowanie komendy, wciąż aktywne jest sterowanie diodą podłączonej do złącza TIMER4
 0   <- wyłączenie diody podłączonej do złącza TIMER4
 ```
+
+Tekst np. "<- wybór sterowania ..." wskazuje na moment wciśnięcia klawisza "a" oraz 
+zatwierdzenia jego wprowadzenia klawiszem "Enter". Tekst 
+ten ("<- wybór sterowania ...") nie powinien być wyświetlany na ekranie. Ma on jedynie 
+na celu pokazanie interakcji użytkownika z oprogramowanie *minicom*.
+
+Projekt nazwij jako *ex1_3*.
+Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
+jako archiwum zip lub 7zip oraz wyślij na eportal.
 
 ## Wskazówki
 
