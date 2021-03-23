@@ -1,5 +1,7 @@
 # Zadanie 0 - ex0
 
+Wprowadzenie
+
 Podczas wykonywania ćwiczeń wykorzystaj instrukcje laboratoryjną:
 
 W. Domski, Sterowniki robotów, Laboratorium – Wprowadzenie, Wykorzystanie 

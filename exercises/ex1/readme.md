@@ -1,5 +1,7 @@
 # Zadanie 1 - ex1
 
+Debugowanie
+
 Przedstawione zadania dotyczą:
 - obsługi interfejsu szeregowego,
 - zarządzania przerwaniami,
@@ -10,6 +12,9 @@ Podczas wykonywania ćwiczeń wykorzystaj instrukcje laboratoryjną:
 
 W. Domski, Sterowniki robotów, Laboratorium – Debugowanie, 
 Zaawansowane techniki debugowania, 2018
+
+W. Domski, Sterowniki robotów, Laboratorium – Liczniki i przerwania, 
+Tryby pracy licznika oraz obsługa przerwań, 2018
 
 ## Przekierowanie standardowego wyjścia
 
