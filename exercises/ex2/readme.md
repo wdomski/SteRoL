@@ -13,7 +13,7 @@ Podczas wykonywania ćwiczeń wykorzystaj instrukcje laboratoryjną:
 W. Domski, Sterowniki robotów, Laboratorium – Liczniki i przerwania, 
 Tryby pracy licznika oraz obsługa przerwań, 2018
 
-## Generator podstawy czasu
+## Generator podstawy czasu - ex2_1
 
 Napisz program, który będzie mrugał diodą LED podłączoną do 
 złącza **LED1**. W tym celu wykorzystaj dowolny licznik 
@@ -33,7 +33,7 @@ Projekt nazwij jako *ex2_1*.
 Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
 jako archiwum zip lub 7zip oraz wyślij na eportal.
 
-## Generator sygnału PWM
+## Generator sygnału PWM - ex2_2
 
 Napisz program, który będzie regulował jasność świecenia diody, 
 w kilku poziomach:
@@ -48,6 +48,9 @@ interfejsu szeregowego jako znaki '0', '1', ...
 Inne wartości przesłane za pomocą 
 interfejsu szeregowego mają być ignorowane.
 
+Częstotliwość sygnału PWM powinna zostać ustawiona 
+na 1kHz.
+
 Do realizacji tego zadania wykorzystaj diodę LED 
 podłączoną do złącza TIMER4.
 
@@ -55,7 +58,7 @@ Projekt nazwij jako *ex2_2*.
 Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
 jako archiwum zip lub 7zip oraz wyślij na eportal.
 
-## Tryb Input Capture
+## Tryb Input Capture - ex2_3
 
 Skonfiguruj złącze TIMER1 jako cyfrowe wyjście, natomiast 
 złącze TIMER5 jako wejście do układu liczącego skonfigurowane 

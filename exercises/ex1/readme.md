@@ -16,7 +16,7 @@ Zaawansowane techniki debugowania, 2018
 W. Domski, Sterowniki robotów, Laboratorium – Liczniki i przerwania, 
 Tryby pracy licznika oraz obsługa przerwań, 2018
 
-## Przekierowanie standardowego wyjścia
+## Przekierowanie standardowego wyjścia - ex1_1
 
 Przekieruj standardowe wyjście na interfejs szeregowy 
 UART dostępny za pośrednictwem peryferium UART2. 
@@ -46,7 +46,7 @@ Projekt nazwij jako *ex1_1*.
 Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
 jako archiwum zip lub 7zip oraz wyślij na eportal.
 
-## Odczytywanie danych z interfejsu szeregowego
+## Odczytywanie danych z interfejsu szeregowego ex1_2
 
 Napisz program, który będzie wypisywał na przekierowane standardowe 
 wyjście napis "Witaj", bądź "Hej", po którym 
@@ -102,7 +102,7 @@ Projekt nazwij jako *ex1_2*.
 Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
 jako archiwum zip lub 7zip oraz wyślij na eportal.
 
-## Włączanie i wyłączanie diody
+## Włączanie i wyłączanie diody ex1_3
 
 Napisz program, który będzie przełączał diody na złączach:
 LED1, LED2 oraz TIMER4.
