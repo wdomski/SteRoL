@@ -237,7 +237,7 @@ minicom. Podłączenie do portu szeregowego może być zrealizowane
 w następujący sposób:
 
 ```bash
-minicom --device /dev/ttyAMC0
+minicom --device /dev/ttyUrzadzenie0
 ```
 
 Domyślna konfiguracja pozwala na otworzenie sesji o 
