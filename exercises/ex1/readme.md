@@ -96,7 +96,8 @@ HAL_UART_RxCpltCallback();
 Pamiętaj o odpowiedniej deklaracji zmiennych, które będą wykorzystywane 
 w obsłudze przerwania. Przestrzegaj zasady dotyczącej implementacji 
 przerwań, obsługę przerwania należy zakończyć tak szybko jak jest 
-to możliwe.
+to możliwe, m.in. nie powinno wykorzystywać się funkcji 
+printf() i jej podobnych wewnątrz obsługi przerwania.
 
 Projekt nazwij jako *ex1_2*.
 Po wykonaniu zadania usuń katalog *Debug* z projektu, spakuj 
