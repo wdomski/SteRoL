@@ -35,7 +35,7 @@ w kolorze czerwonym.
 ![Diody włączone](https://github.com/wdomski/SteRoL/blob/develop/images/boards_on.jpg "Płytki na stole wraz z włączonymi diodami")
 
 Do każdej płytki deweloperskiej podłączona jest płytka stykowa. 
-Na dwie płytki deweloperskie przypada jedna płytka stykowana, 
+Na dwie płytki deweloperskie przypada jedna płytka stykowa, 
 na której znajdują się diody LED, symulatory oraz układy zewnętrzne.
 
 Płytka stykowa znajduje się zawsze po lewej stronie zestawu startowego. 
@@ -43,6 +43,9 @@ Diody znajdujące się na górnej połowie płytki stykowej należą do zestawu,
 bezpośrednio obok, na górze. Diody i inne układy na płytce stykowej, 
 które znajdują się w jej dolej części należą do dolnego zestawu deweloperskiego, 
 co zostało pokazane na powyższych zdjęciach.
+
+Aktualny schemat dla zestawu ewaluacyjnego można znaleźć 
+na [Nucleo64-shield.pdf](https://github.com/wdomski/SteRoL/blob/develop/boards/Nucleo64-shield.pdf).
 
 ## Przygotowanie do zajęć
 
