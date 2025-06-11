@@ -30,9 +30,9 @@ Poniżej przykład środowiska, na którym odbywa się praca zdalna.
 Proszę zwrócić uwagę na diodę LED emitującą światło 
 w kolorze czerwonym.
 
-![Diody wyłączone](https://github.com/wdomski/SteRoL/blob/develop/images/boards_off.jpg "Płytki na stole wraz z wyłączonymi diodami")
+![Diody wyłączone](https://github.com/wdomski/SteRoL/blob/main/images/boards_off.jpg "Płytki na stole wraz z wyłączonymi diodami")
 
-![Diody włączone](https://github.com/wdomski/SteRoL/blob/develop/images/boards_on.jpg "Płytki na stole wraz z włączonymi diodami")
+![Diody włączone](https://github.com/wdomski/SteRoL/blob/main/images/boards_on.jpg "Płytki na stole wraz z włączonymi diodami")
 
 Do każdej płytki deweloperskiej podłączona jest płytka stykowa. 
 Na dwie płytki deweloperskie przypada jedna płytka stykowa, 
@@ -45,7 +45,7 @@ które znajdują się w jej dolej części należą do dolnego zestawu deweloper
 co zostało pokazane na powyższych zdjęciach.
 
 Aktualny schemat dla zestawu ewaluacyjnego można znaleźć 
-na [Nucleo64-shield.pdf](https://github.com/wdomski/SteRoL/blob/develop/boards/Nucleo64-shield.pdf).
+na [Nucleo64-shield.pdf](https://github.com/wdomski/SteRoL/blob/main/boards/Nucleo64-shield.pdf).
 
 ## Przygotowanie do zajęć
 
@@ -390,7 +390,7 @@ to wówczas przydatnym narzędziem może okazać się PuTTY.
 Konfiguracja za pomocą programu jest intuicyjna, natomiast poniżej została 
 pokazana grafika w jaki sposób można ustawić tunelowanie portów.
 
-![Konfiguracja PuTTY](https://github.com/wdomski/SteRoL/blob/develop/images/putty.png "Konfiguracja PuTTY")
+![Konfiguracja PuTTY](https://github.com/wdomski/SteRoL/blob/main/images/putty.png "Konfiguracja PuTTY")
 
 # Rozwiązywanie problemów
 
